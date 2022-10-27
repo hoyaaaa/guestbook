@@ -2,8 +2,7 @@ body {
   background: #36190b;
 }
 .container {
-  width: 60%;
-  margin: 3% auto 10rem auto;
+  width: 100%;
 }
 .main-header {
   text-align: center;
