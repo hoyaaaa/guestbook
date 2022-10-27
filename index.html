@@ -1,73 +1,60 @@
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">	
-  
-<title>오스틴 별장의 영혼 경매 방명록</title>
-<link href="https://fonts.googleapis.com/css?family=Muli|Ovo" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-	
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<title>오스틴 별장의 영혼 경매 방명록</title>
+	<link href="https://fonts.googleapis.com/css?family=Muli|Ovo" rel="stylesheet">
+	<link rel="stylesheet" href="assets/style.css">
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>	
 </head>
 <body>
-<div id="GuestBook">
-	<h1 class="main-header"> Serverless Guestbook</h1>
-	<h3 id="t">Recent Entries</h3>
-<!-- Homepage -->
-<div class="container">
-    <div class="left-block">
-        <div id="json" class="guestbook">
-        </div>
-    </div>	
-    <div class="right-block">
-        <h1>Sign my guestbook</h1>
-        <p> Thanks for checking this out. This is my guestbook. Feel free to sign it so I can see you were here.</p>
-        <div class="links">
-           <a href="#AllEntries">View All Entries</a>
-            <a href="#SignGuestBook">Sign the Guestbook</a>
-	    <a onClick="window.location.reload();">Refresh Guestbook</a>	
-        </div>
-    </div>
-</div>
-	
-<div id="SignGuestBook" class="overlay">
-	<div id="SendForm" class="sign-guest-book-popup">
-		<h1>Sign The Guestbook</h1>
-		<a class="close" href="#">&times;</a>
-		<div class="content">
-      <label style="display: block;
-    text-align: center;" class="aterisk_before" for="gform"> indicates a required field</label>
-      <br>
-		
-    <form name="gform" id="gform" enctype="text/plain" action="GOOGLE_FORM_URL" target="hidden_iframe" onsubmit="submitted=true;">
-       <label for="GOOGLE_ENTRY_ID_Name"  class="aterisk_after">이름</label>
-        <input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Name" id="GOOGLE_ENTRY_ID_Name" placeholder="John Doe." style="background: #5EC6C8;" required>
-        <label for="GOOGLE_ENTRY_ID_Email">이메일</label>
-        <input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Email" id="GOOGLE_ENTRY_ID_Email" placeholder="MarketingPip" style="background: #5EC6C8;">
-   <label for="GOOGLE_ENTRY_ID_TextArea" class="max-length">남기고 싶은 말</label>
-      <textarea class="form-element" name="GOOGLE_ENTRY_ID_TextArea" id="GOOGLE_ENTRY_ID_TextArea" rows="5" cols="30" oninvalid="this.setCustomValidity('You must sign the guestbook')"
-  oninput="this.setCustomValidity('')"  maxlength="50" placeholder="Enter Your Message Here" required></textarea>
-         <label for="g-recaptcha"  class="aterisk_after">Captcha</label>      
-	 <div class="g-recaptcha"
-       data-sitekey="GOOGLE_Captcha_Key"></div>   
-        <input class="form-button" type="submit" value="제출">
-        <input class="form-button" type="reset" value="다시쓰기">
-    </form>
+	<div id="GuestBook">
+		<h1 class="main-header"> Serverless Guestbook</h1>
+		<!-- Homepage -->
+		<div class="container">
+			<h1>방명록을 작성해주세요!!</h1>
+			<p>관람하러 오신 분들 진심으로 감사합니다. 방명록 작성해주시면 감사드리겠습니다.</p>
+			<div class="links">
+				<a href="#AllEntries">모든 방명록 보기</a>
+				<a href="#SignGuestBook">방명록 작성</a>
+				<a onClick="window.location.reload();">새로고침</a>	
+			</div>
+			<h3 id="t">Recent Entries</h3>
+			<div id="json" class="guestbook">
+			</div>        
+		</div>
+		<div id="SignGuestBook" class="overlay">
+			<div id="SendForm" class="sign-guest-book-popup">
+				<h1>방명록 작성</h1>
+				<a class="close" href="#">&times;</a>
+				<div class="content">
+					<label style="display: block;
+						text-align: center;" class="aterisk_before" for="gform"> 필수 사항 확인 부탁드립니다</label>
+					<br>
+					<form name="gform" id="gform" enctype="text/plain" action="GOOGLE_FORM_URL" target="hidden_iframe" onsubmit="submitted=true;">
+						<label for="GOOGLE_ENTRY_ID_Name"  class="aterisk_after">이름</label>
+						<input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Name" id="GOOGLE_ENTRY_ID_Name" placeholder="이름" style="background: #5EC6C8;" required>
+						<label for="GOOGLE_ENTRY_ID_Email">이메일</label>
+						<input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Email" id="GOOGLE_ENTRY_ID_Email" placeholder="이메일" style="background: #5EC6C8;">
+						<label for="GOOGLE_ENTRY_ID_TextArea" class="max-length">남기고 싶은 말</label>
+						<textarea class="form-element" name="GOOGLE_ENTRY_ID_TextArea" id="GOOGLE_ENTRY_ID_TextArea" rows="5" cols="30" placeholder="내용" required></textarea>
+						<label for="g-recaptcha"  class="aterisk_after">캡차</label>      
+						<div class="g-recaptcha"
+								data-sitekey="GOOGLE_Captcha_Key"></div>   
+						<input class="form-button" type="submit" value="제출">
+						<input class="form-button" type="reset" value="다시쓰기">
+					</form>
+				</div>
+			</div>
+		</div>
+		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>	
+		<div id="AllEntries" class="overlay">
+			<div class="popup">
+				<h2>모든 글 보기</h2>
+				<a class="close" href="#">&times;</a>
+				<div id="AllEntries_Content" class="content" style="height: 25em;overflow-y: auto;">
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>	
-	
-<div id="AllEntries" class="overlay">
-	<div class="popup">
-		<h2>All Entries</h2>
-		<a class="close" href="#">&times;</a>
-		<div id="AllEntries_Content" class="content" style="height: 25em;overflow-y: auto;">
-	
-            </div>
-		</div>
-	</div>
-</div>
-</div>
-
 </body>
 <script type="text/javascript">
 	// Put your Google Entry Form ID(s) Here
