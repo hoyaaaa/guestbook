@@ -3,6 +3,7 @@ body {
 }
 .container {
   width: 100%;
+  display: inline-block;
 }
 .main-header {
   text-align: center;
@@ -31,7 +32,7 @@ h1 {
 .left-block,
 .right-block {
   float: left;
-  /* padding: 1.5em; */
+  padding-x: 0 0.5em;
   box-sizing: border-box;
 }
 .left-block {
