@@ -48,9 +48,6 @@ document.getElementById("gform").addEventListener("submit", (e) => {
       "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;"
     );
   }, 500);
-  setTimeout(function () {
-    document.location.reload();
-  }, 3000);
   return true;
 });
 
