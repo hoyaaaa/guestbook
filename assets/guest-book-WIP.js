@@ -1,3 +1,11 @@
+$(document).ready(function () {
+  setInterval(function () {
+    if (window.location.hash === "") {
+      window.location.reload(true);
+    }
+  }, 5000);
+});
+
 window.onload = fetchGuestBook_Entries();
 
 var field = {

@@ -11,10 +11,7 @@
 		<!-- Homepage -->
 		<div>
 			<p>관람하러 오신 분들 진심으로 감사합니다.<br>방명록 작성해주시면 감사드리겠습니다.</p>
-			<p class="links">
-				<a href="#SignGuestBook">방명록 작성</a>
-				<a onClick="window.location.reload();">새로고침</a>	
-			</p>
+			<a href="#SignGuestBook">방명록 작성</a>
 			<div id="json" class="guestbook">
 			</div>        
 		</div>
@@ -28,11 +25,11 @@
 					<br>
 					<form name="gform" id="gform" enctype="text/plain" action="GOOGLE_FORM_URL" target="hidden_iframe" onsubmit="submitted=true;">
 						<label for="GOOGLE_ENTRY_ID_Name" class="aterisk_after">이름</label>
-						<input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Name" id="GOOGLE_ENTRY_ID_Name" placeholder="이름" style="background: #5EC6C8; width: 100%;" required>
+						<input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Name" id="GOOGLE_ENTRY_ID_Name" placeholder="이름" style="background: #5EC6C8; color: white; width: 100%;" required>
 						<label for="GOOGLE_ENTRY_ID_Email">이메일</label>
-						<input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Email" id="GOOGLE_ENTRY_ID_Email" placeholder="이메일" style="background: #5EC6C8; width: 100%;">
+						<input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Email" id="GOOGLE_ENTRY_ID_Email" placeholder="이메일" style="background: #5EC6C8; color: white; width: 100%;">
 						<label for="GOOGLE_ENTRY_ID_TextArea" class="aterisk_after">남기고 싶은 말</label>
-						<textarea class="form-element" name="GOOGLE_ENTRY_ID_TextArea" id="GOOGLE_ENTRY_ID_TextArea" rows="5" placeholder="내용" style="width: 100%;" required></textarea>
+						<textarea class="form-element" name="GOOGLE_ENTRY_ID_TextArea" id="GOOGLE_ENTRY_ID_TextArea" rows="5" placeholder="내용" style="background: #5EC6C8; color: white; width: 100%;" required></textarea>
 <!-- 						<label for="g-recaptcha" class="aterisk_after">캡차</label>
 						<div class="g-recaptcha" data-theme="light" data-sitekey="GOOGLE_Captcha_Key" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div> -->
 						<br>
