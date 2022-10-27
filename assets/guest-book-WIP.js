@@ -38,6 +38,8 @@ function fetchGuestBook_Entries() {
 
 // On Submit - Validating Text Before Sending For Profanities
 document.getElementById('gform').addEventListener("submit", (e) => {
+	e.preventDefault();
+	document.gform.submit();
 	setTimeout(function() {
 		Gform.setAttribute("style", "display:none;");  
 		var subscribeForm = document.getElementById("SendForm")
@@ -46,6 +48,7 @@ document.getElementById('gform').addEventListener("submit", (e) => {
 			margin-top: 2em;">방명록이 추가되었습니다.<br>감사합니다.</h3>`
 		subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
 	}, 500);
+	return true
 });
 
 function encodeHTML(sanizitedInput) {
