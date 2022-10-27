@@ -1,7 +1,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">	
   
-  <title>Serverless Guest Book | Built by github.com/MarketingPipeline</title>
+<title>오스틴 별장의 영혼 경매 방명록</title>
 <link href="https://fonts.googleapis.com/css?family=Muli|Ovo" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 	
@@ -13,17 +13,10 @@
 	<h3 id="t">Recent Entries</h3>
 <!-- Homepage -->
 <div class="container">
-
     <div class="left-block">
         <div id="json" class="guestbook">
-            
         </div>
-    
-    </div>
-
-
-	
-	
+    </div>	
     <div class="right-block">
         <h1>Sign my guestbook</h1>
         <p> Thanks for checking this out. This is my guestbook. Feel free to sign it so I can see you were here.</p>
@@ -31,7 +24,6 @@
            <a href="#AllEntries">View All Entries</a>
             <a href="#SignGuestBook">Sign the Guestbook</a>
 	    <a onClick="window.location.reload();">Refresh Guestbook</a>	
-           
         </div>
     </div>
 </div>
@@ -46,28 +38,18 @@
       <br>
 		
     <form name="gform" id="gform" enctype="text/plain" action="GOOGLE_FORM_URL" target="hidden_iframe" onsubmit="submitted=true;">
-      
-       <label for="GOOGLE_ENTRY_ID_Name"  class="aterisk_after">Name </label>
-      
+       <label for="GOOGLE_ENTRY_ID_Name"  class="aterisk_after">이름</label>
         <input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Name" id="GOOGLE_ENTRY_ID_Name" placeholder="John Doe." style="background: #5EC6C8;" required>
-      
-        <label for="GOOGLE_ENTRY_ID_Email">GitHub Username</label>
-      
-   
+        <label for="GOOGLE_ENTRY_ID_Email">이메일</label>
         <input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Email" id="GOOGLE_ENTRY_ID_Email" placeholder="MarketingPip" style="background: #5EC6C8;">
-      
-   <label for="GOOGLE_ENTRY_ID_TextArea"  class="max-length">Guestbook Entry</label>
-      
+   <label for="GOOGLE_ENTRY_ID_TextArea" class="max-length">남기고 싶은 말</label>
       <textarea class="form-element" name="GOOGLE_ENTRY_ID_TextArea" id="GOOGLE_ENTRY_ID_TextArea" rows="5" cols="30" oninvalid="this.setCustomValidity('You must sign the guestbook')"
   oninput="this.setCustomValidity('')"  maxlength="50" placeholder="Enter Your Message Here" required></textarea>
-      
          <label for="g-recaptcha"  class="aterisk_after">Captcha</label>      
 	 <div class="g-recaptcha"
        data-sitekey="GOOGLE_Captcha_Key"></div>   
-      
-        <input class="form-button" type="submit" value="Submit">
-        <input class="form-button" type="reset" value="Reset Form">
- 
+        <input class="form-button" type="submit" value="제출">
+        <input class="form-button" type="reset" value="다시쓰기">
     </form>
 		</div>
 	</div>
@@ -88,34 +70,18 @@
 
 </body>
 <script type="text/javascript">
-	
-	
-  // Put your Google Entry Form ID(s) Here
-  var GOOGLE_ENTRY_ID_Name="entry.1737374531";   // Name Entry ID
-		
- var GOOGLE_ENTRY_ID_Email="entry.1993726452";	// Email Entry ID			
-		
-var GOOGLE_ENTRY_ID_Guestbook="entry.1598622374"; // Guestbook Entry ID				
-    
-   // Put your Google Form Link Here  (Make sure to use correct link as documented)
-		
+	// Put your Google Entry Form ID(s) Here
+	var GOOGLE_ENTRY_ID_Name="entry.1737374531";   // Name Entry ID
+	var GOOGLE_ENTRY_ID_Email="entry.1993726452";	// Email Entry ID			
+	var GOOGLE_ENTRY_ID_Guestbook="entry.1598622374"; // Guestbook Entry ID				
+	// Put your Google Form Link Here  (Make sure to use correct link as documented)
 
-var Google_Form_Link="https://docs.google.com/forms/d/e/1FAIpQLSf97OgfxXPQhmYkfpNlH0avCn6ykG39RV4zCRdeJuKTjP9uaw/formResponse?"  
-var Google_Form_ID="1k8ht_zbNwCGzpVwgHZDLFH8dskqxUKT0Z5kqlziW6do"  
-var Google_Form_Name="guestbook"  
-	
-  
-  // Google Recaptcha Key 
-	 
-var CaptchaKey = "6Le6o7ciAAAAAGHKHtyeh5peF0iKWhfLl-TxPAnX" // put your Google Captcha Key here
-  </script> 
-<script src="assets/replace-vars.js">
+	var Google_Form_Link="https://docs.google.com/forms/d/e/1FAIpQLSf97OgfxXPQhmYkfpNlH0avCn6ykG39RV4zCRdeJuKTjP9uaw/formResponse?"  
+	var Google_Form_ID="1k8ht_zbNwCGzpVwgHZDLFH8dskqxUKT0Z5kqlziW6do"  
+	var Google_Form_Name="guestbook"  
+
+	// Google Recaptcha Key	 
+	var CaptchaKey = "6Le6o7ciAAAAAGHKHtyeh5peF0iKWhfLl-TxPAnX" // put your Google Captcha Key here
 </script>
-
-
-<script>
-
-
-  </script>
-
+<script src="assets/replace-vars.js"></script>
 <script src="assets/guest-book-WIP.js"></script>
