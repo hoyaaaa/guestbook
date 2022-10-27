@@ -38,18 +38,16 @@ function fetchGuestBook_Entries() {
 
 // On Submit - Validating Text Before Sending For Profanities
 var Gform = document.getElementById("gform")
-Gform.addEventListener('submit', (e) => {
-	  validateRecaptcha();
-})
+Gform.addEventListener('submit', validateRecaptcha)
 
 // Validate Recaptcha
-function validateRecaptcha() {
+function validateRecaptcha(e) {
     var response = grecaptcha.getResponse();
     if (response.length === 0) {
          // if Captcha not passed - do no nothing. 
         return false;
     } else {
-		validate_text()
+	validate_text()
         return true;
     }
 }
@@ -70,8 +68,8 @@ function validate_text() {
   
     	// Show the user message their entry has been added
 		subscribeForm.innerHTML = `<a class="close" href="#">&times;</a>
-		<h1 style="text-align: center;
-    		margin-top: 2em;">당신의 방명록이 추가되었습니다. 잠시 후 추가 될 예정입니다. 감사합니다.</h1>`   
+		<h3 style="text-align: center;
+    		margin-top: 2em;">방명록이 추가되었습니다.<br>감사합니다.</h3>`   
 	},500);
 
 	var subscribeForm = document.getElementById("SendForm")  
