@@ -37,19 +37,19 @@ function fetchGuestBook_Entries() {
 }
 
 // On Submit - Validating Text Before Sending For Profanities
-document.getElementById('gform').onsubmit = function() {
+document.getElementById('gform').addEventListener("submit", (e) => {
 	setTimeout(function() {
 		Gform.setAttribute("style", "display:none;");  
 		var subscribeForm = document.getElementById("SendForm")
 		// Show the user message their entry has been added
 		subscribeForm.innerHTML = `<h1 style="text-align: center;
-			margin-top: 2em;">방명록이 추가되었습니다.<br>감사합니다.</h3>`   
+			margin-top: 2em;">방명록이 추가되었습니다.<br>감사합니다.</h3>`
+		subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
 	},500);
 	setTimeout(function() {
 		document.location.reload()
 	}, 3000);
-	return true
-};
+});
 
 function encodeHTML(sanizitedInput) {
     return sanizitedInput.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
