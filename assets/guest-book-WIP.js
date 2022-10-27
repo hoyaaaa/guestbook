@@ -69,8 +69,6 @@ function validateRecaptcha() {
          // if Captcha not passed - do no nothing. 
         return false;
     } else {
-	    // if Captcha Passed - Validate Text For Swearing Etc. 
-        validate_text();
         return true;
     }
 }
