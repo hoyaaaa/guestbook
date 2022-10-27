@@ -42,38 +42,27 @@ Gform.addEventListener('submit', validateRecaptcha)
 
 // Validate Recaptcha
 function validateRecaptcha(e) {
+    e.preventDefault();
     var response = grecaptcha.getResponse();
-    if (response.length === 0) {
-         // if Captcha not passed - do no nothing. 
-        return false;
-    } else {
-	validate_text()
-        return true;
-    }
-}
-
-function validate_text() {
-	var response = grecaptcha.getResponse();
     if (response.length === 0) { // if Captcha is not complete
         // do nothing
     } else { // add values to guestbook
-		document.gform.submit();
-    }
-		// Timeout is needed for form to properly submit with animation
+	document.gform.submit();
+	// Timeout is needed for form to properly submit with animation
 	setTimeout(function() {
-  		// Hide the form values 
-		Gform.setAttribute("style", "display:none;");  
-  		var subscribeForm = document.getElementById("SendForm")
-
-  
+	// Hide the form values 
+	Gform.setAttribute("style", "display:none;");  
+	var subscribeForm = document.getElementById("SendForm")
     	// Show the user message their entry has been added
-		subscribeForm.innerHTML = `<a class="close" href="#">&times;</a>
+	subscribeForm.innerHTML = `<a class="close" href="#">&times;</a>
 		<h3 style="text-align: center;
     		margin-top: 2em;">방명록이 추가되었습니다.<br>감사합니다.</h3>`   
 	},500);
 
 	var subscribeForm = document.getElementById("SendForm")  
 	subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
+    }
+    return false
 }
 
 function encodeHTML(sanizitedInput) {
