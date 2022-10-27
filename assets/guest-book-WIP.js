@@ -53,7 +53,7 @@ document.getElementById("gform").addEventListener("submit", (e) => {
   }, 500);
   setTimeout(function () {
     document.location.replace("https://hoyaaaa.github.io/guestbook");
-  }, 5000);
+  }, 2500);
   return true;
 });
 
