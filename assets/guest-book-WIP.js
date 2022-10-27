@@ -32,12 +32,6 @@ function fetchGuestBook_Entries() {
 			</div>`;
       });
     });
-
-  setInterval(function () {
-    if (window.location.hash === "") {
-      window.location.reload(true);
-    }
-  }, 5000);
 }
 
 // On Submit - Validating Text Before Sending For Profanities
@@ -49,9 +43,7 @@ document.getElementById("gform").addEventListener("submit", (e) => {
     document.getElementById(
       "SendForm"
     ).innerHTML = `<h1 style="text-align: center;
-			margin-top: 2em;">방명록 작성이 완료되었습니다.<br>감사합니다.</h1>
-			<h3 style="text-align: center;
-			margin-top: 2em;">시간이 소요될 수 있습니다. 새로고침 해주세요.</h3>`;
+			margin-top: 2em;">방명록 작성이 완료되었습니다.<br>감사합니다.</h1>`;
     document
       .getElementById("SendForm")
       .setAttribute(

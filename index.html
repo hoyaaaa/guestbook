@@ -10,8 +10,11 @@
 		<h1 class="main-header">오스틴 별장의 영혼 경매<br>방명록</h1>
 		<!-- Homepage -->
 		<div>
-			<p>관람하러 오신 분들 진심으로 감사합니다.<br>방명록 작성해주시면 감사드리겠습니다.</p>
-			<div class="links"><a href="#SignGuestBook">방명록 작성</a></div>
+			<p>관람하러 오신 분들 진심으로 감사합니다.<br>방명록 작성해주시면 감사드리겠습니다.<br>혹시 작성한 글이 보이지 않으시면 잠시 후 새로고침 부탁드립니다.</p>
+			<p class="links">
+				<a href="#SignGuestBook">방명록 작성</a>
+				<a onClick="window.location.reload();">새로고침</a>	
+			</p>
 			<div id="json" class="guestbook">
 			</div>        
 		</div>
@@ -30,8 +33,6 @@
 						<input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Email" id="GOOGLE_ENTRY_ID_Email" placeholder="이메일" style="background: #5EC6C8; color: white; width: 100%;">
 						<label for="GOOGLE_ENTRY_ID_TextArea" class="aterisk_after">남기고 싶은 말</label>
 						<textarea class="form-element" name="GOOGLE_ENTRY_ID_TextArea" id="GOOGLE_ENTRY_ID_TextArea" rows="5" placeholder="내용" style="background: #5EC6C8; color: white; width: 100%;" required></textarea>
-<!-- 						<label for="g-recaptcha" class="aterisk_after">캡차</label>
-						<div class="g-recaptcha" data-theme="light" data-sitekey="GOOGLE_Captcha_Key" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div> -->
 						<br>
 						<input class="form-button" type="submit" value="제출">
 						<input class="form-button" type="reset" value="다시쓰기">
