@@ -51,9 +51,9 @@ document.getElementById("gform").addEventListener("submit", (e) => {
         "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;"
       );
   }, 500);
-  setTimeout(function () {
-    document.location.replace("https://hoyaaaa.github.io/guestbook");
-  }, 2500);
+  //   setTimeout(function () {
+  //     document.location.replace("https://hoyaaaa.github.io/guestbook");
+  //   }, 2500);
   return true;
 });
 
