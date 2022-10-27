@@ -43,7 +43,9 @@ document.getElementById("gform").addEventListener("submit", (e) => {
     document.getElementById(
       "SendForm"
     ).innerHTML = `<h1 style="text-align: center;
-			margin-top: 2em;">방명록 작성이 완료되었습니다.<br>감사합니다.</h3>`;
+			margin-top: 2em;">방명록 작성이 완료되었습니다.<br>감사합니다.</h1>
+			<h3 style="text-align: center;
+			margin-top: 2em;">시간이 소요될 수 있습니다. 새로고침 해주세요.</h3>`;
     document
       .getElementById("SendForm")
       .setAttribute(
