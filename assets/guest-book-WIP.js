@@ -38,7 +38,6 @@ function fetchGuestBook_Entries() {
 
 // On Submit - Validating Text Before Sending For Profanities
 document.getElementById('gform').onsubmit = function() {
-	document.gform.submit();
 	setTimeout(function() {
 		Gform.setAttribute("style", "display:none;");  
 		var subscribeForm = document.getElementById("SendForm")
@@ -49,7 +48,7 @@ document.getElementById('gform').onsubmit = function() {
 	setTimeout(function() {
 		document.location.reload()
 	}, 3000);
-	return false
+	return true
 };
 
 function encodeHTML(sanizitedInput) {
