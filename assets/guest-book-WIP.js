@@ -36,7 +36,6 @@ function fetchGuestBook_Entries() {
 
 // On Submit - Validating Text Before Sending For Profanities
 document.getElementById("gform").addEventListener("submit", (e) => {
-  document.gform.submit();
   setTimeout(function () {
     Gform.setAttribute("style", "display:none;");
     var subscribeForm = document.getElementById("SendForm");
