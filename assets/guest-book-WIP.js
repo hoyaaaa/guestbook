@@ -36,7 +36,7 @@ function fetchGuestBook_Entries() {
 
 // On Submit - Validating Text Before Sending For Profanities
 document.getElementById("gform").addEventListener("submit", (e) => {
-  document.gform.submit();
+  //   document.gform.submit();
   setTimeout(function () {
     document.getElementById("gform").setAttribute("style", "display:none;");
     // Show the user message their entry has been added
@@ -51,6 +51,9 @@ document.getElementById("gform").addEventListener("submit", (e) => {
         "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;"
       );
   }, 500);
+  setTimeout(function () {
+    document.location.replace("https://hoyaaaa.github.io/guestbook");
+  }, 3000);
   return true;
 });
 
