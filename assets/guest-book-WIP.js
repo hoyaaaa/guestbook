@@ -49,28 +49,34 @@ function validateRecaptcha() {
          // if Captcha not passed - do no nothing. 
         return false;
     } else {
+		validate_text()
         return true;
     }
 }
 
-var response = grecaptcha.getResponse();
-if (response.length === 0) { // if Captcha is not complete
-	// do nothing
-} else { // add values to guestbook
-	document.gform.submit();
+function validate_text() {
+	var response = grecaptcha.getResponse();
+    if (response.length === 0) { // if Captcha is not complete
+        // do nothing
+    } else { // add values to guestbook
+		document.gform.submit();
+    }
+		// Timeout is needed for form to properly submit with animation
+	setTimeout(function() {
+  		// Hide the form values 
+		Gform.setAttribute("style", "display:none;");  
+  		var subscribeForm = document.getElementById("SendForm")
+
+  
+    	// Show the user message their entry has been added
+		subscribeForm.innerHTML = `<a class="close" href="#">&times;</a>
+		<h1 style="text-align: center;
+    		margin-top: 2em;">당신의 방명록이 추가되었습니다. 잠시 후 추가 될 예정입니다. 감사합니다.</h1>`   
+	},500);
+
+	var subscribeForm = document.getElementById("SendForm")  
+	subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
 }
-	// Timeout is needed for form to properly submit with animation
-setTimeout(function() {
-	// Hide the form values 
-	Gform.setAttribute("style", "display:none;");  
-	var subscribeForm = document.getElementById("SendForm")
-
-
-	// Show the user message their entry has been added
-	subscribeForm.innerHTML = `<a class="close" href="#">&times;</a>
-	<h1 style="text-align: center;
-	margin-top: 2em;">당신의 방명록이 추가되었습니다. 잠시 후 추가 될 예정입니다. 감사합니다.</h1>`   
-}, 500);
 
 function encodeHTML(sanizitedInput) {
     return sanizitedInput.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
