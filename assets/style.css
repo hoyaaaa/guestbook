@@ -1,5 +1,6 @@
 body {
   background: #160305;
+  color: white;
   font-family: "Muli", sans-serif;
 }
 .container {
@@ -65,7 +66,7 @@ h1 {
   margin-bottom: 0.125rem;
 }
 .entry-info .author {
-  color: #a51c3c;
+  color: #28233a;
   font-weight: bold;
 }
 .entry-text p {
