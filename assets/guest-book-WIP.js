@@ -38,32 +38,20 @@ function fetchGuestBook_Entries() {
 
 // On Submit - Validating Text Before Sending For Profanities
 document.getElementById('gform').onsubmit = function() {
-    var response = grecaptcha.getResponse();
-    if (response.length === 0) { // if Captcha is not complete
-        return false
-    } else { // add values to guestbook
-	document.gform.submit();
-	// Timeout is needed for form to properly submit with animation
 	setTimeout(function() {
 	// Hide the form values 
 	Gform.setAttribute("style", "display:none;");  
 	var subscribeForm = document.getElementById("SendForm")
-    	// Show the user message their entry has been added
+	// Show the user message their entry has been added
 	subscribeForm.innerHTML = `<a class="close" href="#">&times;</a>
 		<h3 style="text-align: center;
-    		margin-top: 2em;">방명록이 추가되었습니다.<br>감사합니다.</h3>`   
+		margin-top: 2em;">방명록이 추가되었습니다.<br>감사합니다.</h3>`   
 	},500);
 
 	var subscribeForm = document.getElementById("SendForm")  
 	subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
-        return true
-    }
+	return true
 };
-
-// Validate Recaptcha
-function validateRecaptcha(e) {
-    
-}
 
 function encodeHTML(sanizitedInput) {
     return sanizitedInput.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
