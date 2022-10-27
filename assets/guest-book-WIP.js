@@ -13,6 +13,8 @@ fetch(
 
         // reversing JSON data to make things easier
          let sortedInput = (data.reverse())
+	 
+	 console.log(sortedInput)
              
 			
 	 	
