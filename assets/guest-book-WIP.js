@@ -18,8 +18,8 @@ function fetchGuestBook_Entries() {
 		/// Adding all entries to all entry section
 		sortedInput.forEach((row) => {
 			// Sanitize Data
-			let SantizeName =  encodeHTML(row[field.Name]).replace(/[^\x00-\x7F]/g, "")
-			let SantizeResponses =  encodeHTML(row[field.Guestbook_Entry]).replace(/[^\x00-\x7F]/g, "")
+			let SantizeName =  encodeHTML(row[field.Name])
+			let SantizeResponses =  encodeHTML(row[field.Guestbook_Entry])
 
 			// Split timestamp data
 			var splitTime =  row[field.Timestamp]			
