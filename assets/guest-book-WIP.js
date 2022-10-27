@@ -38,19 +38,18 @@ function fetchGuestBook_Entries() {
 
 // On Submit - Validating Text Before Sending For Profanities
 document.getElementById('gform').onsubmit = function() {
+	document.gform.submit();
 	setTimeout(function() {
-	// Hide the form values 
-	Gform.setAttribute("style", "display:none;");  
-	var subscribeForm = document.getElementById("SendForm")
-	// Show the user message their entry has been added
-	subscribeForm.innerHTML = `<a class="close" href="#">&times;</a>
-		<h3 style="text-align: center;
-		margin-top: 2em;">방명록이 추가되었습니다.<br>감사합니다.</h3>`   
+		Gform.setAttribute("style", "display:none;");  
+		var subscribeForm = document.getElementById("SendForm")
+		// Show the user message their entry has been added
+		subscribeForm.innerHTML = `<h1 style="text-align: center;
+			margin-top: 2em;">방명록이 추가되었습니다.<br>감사합니다.</h3>`   
 	},500);
-
-	var subscribeForm = document.getElementById("SendForm")  
-	subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
-	return true
+	setTimeout(function() {
+		document.location.reload()
+	}, 3000);
+	return false
 };
 
 function encodeHTML(sanizitedInput) {
