@@ -1,6 +1,5 @@
 body {
   background: #36190b;
-  font-family: "Muli", sans-serif;
 }
 .container {
   width: 60%;
@@ -28,7 +27,7 @@ a:hover {
   color: #fff;
 }
 h1 {
-  font-family: "Ovo", serif;
+  /* font-family: "Ovo", serif; */
 }
 .left-block,
 .right-block {
@@ -187,7 +186,7 @@ img.icon {
 .popup h2 {
   margin-top: 0;
   color: #333;
-  font-family: Tahoma, Arial, sans-serif;
+  /* font-family: Tahoma, Arial, sans-serif; */
 }
 .popup .close {
   position: absolute;
@@ -225,7 +224,7 @@ img.icon {
 .sign-guest-book-popup h2 {
   margin-top: 0;
   color: #333;
-  font-family: Tahoma, Arial, sans-serif;
+  /* font-family: Tahoma, Arial, sans-serif; */
 }
 .sign-guest-book-popup .close {
   position: absolute;
