@@ -1,6 +1,5 @@
 body {
   background: #160305;
-  color: white;
   font-family: "Muli", sans-serif;
 }
 .container {
@@ -15,11 +14,6 @@ body {
 h1 {
   text-align: center;
   margin-top: 0em;
-}
-h3 {
-  position: relative;
-  top: 2em;
-  left: 23%;
 }
 p {
   line-height: 150%;
@@ -54,6 +48,7 @@ h1 {
   padding: 0.5rem 1.5rem;
   transition: background 0.25s ease;
   height: 100px;
+  color: black;
 }
 .entry:nth-child(even) {
   background: #ffffff;
