@@ -45,10 +45,7 @@ document.getElementById('gform').addEventListener("submit", (e) => {
 		subscribeForm.innerHTML = `<h1 style="text-align: center;
 			margin-top: 2em;">방명록이 추가되었습니다.<br>감사합니다.</h3>`
 		subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
-	},500);
-	setTimeout(function() {
-		document.location.reload()
-	}, 3000);
+	}, 500);
 });
 
 function encodeHTML(sanizitedInput) {
