@@ -14,46 +14,26 @@ function fetchGuestBook_Entries() {
 	.then((res) => res.json())
 	.then((data) => {
         // reversing JSON data to make things easier
-		let sortedInput = (data.reverse())
-		for(var i = 0; i < 10 && i < sortedInput.length; i++) {
-			// Split timestamp data
-			var splitTime =  sortedInput[i][field.Timestamp]
-
-			// Sanitize Data
-			let SantizeName =  encodeHTML(sortedInput[i][field.Name]).replace(/[^\x00-\x7F]/g, "")
-			let SantizeResponses =  encodeHTML(sortedInput[i][field.Guestbook_Entry]).replace(/[^\x00-\x7F]/g, "")
-
-			// Add Entries To Main Section
-			document.getElementById("json").innerHTML += `
-				<div class="entry">
-					<div class="entry-info">
-						<p><span class="author"> ${SantizeName}</span> | <span class="date">${splitTime}</span></p>
-					</div>
-					<div class="entry-text">
-						<p>${SantizeResponses} </p>
-					</div>
-				</div>`		
-		}
-	
+		let sortedInput = (data.reverse())	
 		/// Adding all entries to all entry section
-		data.forEach((row) => {
+		sortedInput.forEach((row) => {
 			// Sanitize Data
 			let SantizeName =  encodeHTML(row[field.Name]).replace(/[^\x00-\x7F]/g, "")
 			let SantizeResponses =  encodeHTML(row[field.Guestbook_Entry]).replace(/[^\x00-\x7F]/g, "")
 
 			// Split timestamp data
 			var splitTime =  row[field.Timestamp]			
-			document.getElementById("AllEntries_Content").innerHTML += `
-				<div class="entry">
-					<div class="entry-info">
-						<p><span class="author">${SantizeName}</span> | <span class="date">${splitTime}</span></p>
+			document.getElementById("json").innerHTML += `
+			<div class="entry">
+				<div class="entry-info">
+					<p><span class="author"> ${SantizeName}</span> | <span class="date">${splitTime}</span></p>
 				</div>
 				<div class="entry-text">
-					<p>${SantizeResponses}</p>
+					<p>${SantizeResponses} </p>
 				</div>
-			</div>`          
+			</div>`		         
 		});
-    });	
+    	});	
 }
 
 // On Submit - Validating Text Before Sending For Profanities
