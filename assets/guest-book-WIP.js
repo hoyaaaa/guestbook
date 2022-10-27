@@ -1,11 +1,3 @@
-$(document).ready(function () {
-  setInterval(function () {
-    if (window.location.hash === "") {
-      window.location.reload(true);
-    }
-  }, 5000);
-});
-
 window.onload = fetchGuestBook_Entries();
 
 var field = {
@@ -40,6 +32,12 @@ function fetchGuestBook_Entries() {
 			</div>`;
       });
     });
+
+  setInterval(function () {
+    if (window.location.hash === "") {
+      window.location.reload(true);
+    }
+  }, 5000);
 }
 
 // On Submit - Validating Text Before Sending For Profanities
