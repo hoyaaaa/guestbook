@@ -21,7 +21,6 @@ p {
 a {
   text-decoration: none;
   color: #cddbe2;
-  background: #a51c3c;
   transition: all 0.25s ease;
 }
 a:hover {
@@ -153,14 +152,11 @@ img.icon {
   padding: 1rem 4rem;
   display: inline-block;
   border: none;
+  background: #f7dd00;
   margin-right: 0.5rem;
   color: #cddbe2;
   background: #a51c3c;
   transition: all 0.25s ease;
-}
-.form-button:hover {
-  background: #ed1b51;
-  color: #fff;
 }
 .overlay {
   position: fixed;
