@@ -37,15 +37,10 @@ function fetchGuestBook_Entries() {
 }
 
 // On Submit - Validating Text Before Sending For Profanities
-var Gform = document.getElementById("gform")
-Gform.addEventListener('submit', validateRecaptcha)
-
-// Validate Recaptcha
-function validateRecaptcha(e) {
-    e.preventDefault();
+document.getElementById('gform').onsubmit = function() {
     var response = grecaptcha.getResponse();
     if (response.length === 0) { // if Captcha is not complete
-        // do nothing
+        return false
     } else { // add values to guestbook
 	document.gform.submit();
 	// Timeout is needed for form to properly submit with animation
@@ -61,8 +56,13 @@ function validateRecaptcha(e) {
 
 	var subscribeForm = document.getElementById("SendForm")  
 	subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
+        return true
     }
-    return false
+};
+
+// Validate Recaptcha
+function validateRecaptcha(e) {
+    
 }
 
 function encodeHTML(sanizitedInput) {
