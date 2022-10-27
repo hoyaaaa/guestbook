@@ -1,9 +1,14 @@
+window.onload = fetchGuestBook_Entries();
 
-
- window.onload = fetchGuestBook_Entries();
+var field = {
+	Timestamp: "타임스탬프",
+	Name: "이름",
+	Email: "이메일",
+	Guestbook_Entry: "남기고 싶은 말"	
+}
 
 function fetchGuestBook_Entries(){
-
+	
 // Fetching Spreadsheet JSON Data	
 fetch(
     `https://opensheet.elk.sh/${Google_Form_ID}/${Google_Form_Name}`
@@ -23,17 +28,17 @@ fetch(
 	for(var i = 0; i < 5 && i < sortedInput.length; i++){
 		
 		// Split timestamp data
-		var splitTime =  sortedInput[i].Timestamp.split(' ')[0];
-		var splitTime_1 =  sortedInput[i].Timestamp.split(' ').pop();
+		var splitTime =  sortedInput[i][field.Timestamp].split(' ')[0];
+		var splitTime_1 =  sortedInput[i][field.Timestamp].split(' ').pop();
 
 		
 		 // Work in Progress - Convert to 24 Hour
 		let ConvertedTime =  tConvert (splitTime_1)
 		
 		// Sanitize Data
-		let SantizeName =  encodeHTML(sortedInput[i].Name)
+		let SantizeName =  encodeHTML(sortedInput[i][field.Name])
 		
-		let SantizeResponses =  encodeHTML(sortedInput[i].Guestbook_Entry)
+		let SantizeResponses =  encodeHTML(sortedInput[i][field.Guestbook_Entry])
 		
 		    // Dis-allow unicode comments for spam 
 		 SantizeName = SantizeName.replace(/[^\x00-\x7F]/g, "")
@@ -59,9 +64,9 @@ fetch(
         data.forEach((row) => {
 		
 		// Sanitize Data
-		let SantizeResponses =  encodeHTML(row.Guestbook_Entry)
+		let SantizeResponses =  encodeHTML(row[field.Guestbook_Entry])
 		
-		let SantizeName =  encodeHTML(row.Name)
+		let SantizeName =  encodeHTML(row[field.Name])
 		
 		// Dis-allow unicode comments for spam 
 		 SantizeName = SantizeName.replace(/[^\x00-\x7F]/g, "")
@@ -69,8 +74,8 @@ fetch(
 		SantizeResponses = SantizeResponses.replace(/[^\x00-\x7F]/g, "")
 		
 		// Split timestamp data
-					var splitTime =  row.Timestamp.split(' ')[0];
-		var splitTime_1 =  row.Timestamp.split(' ').pop();
+					var splitTime =  row[field.Timestamp].split(' ')[0];
+		var splitTime_1 =  row[field.Timestamp].split(' ').pop();
 
 		
 		 // Work in Progress - Convert to 24 Hour
